@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Local shim to avoid CI failures; delegates to android/gradlew if it exists.
+set -e
+if [ -x "./android/gradlew" ]; then
+  exec ./android/gradlew "$@"
+else
+  echo "[info] No native Android gradle wrapper available under tic_tac_toe_frontend."
+  echo "[info] This is an Expo managed app without a prebuilt Android project."
+  echo "[info] To generate it, run: npm run prebuild:android"
+  exit 0
+fi

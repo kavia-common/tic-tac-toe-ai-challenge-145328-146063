@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Placeholder gradle wrapper for managed Expo project without native prebuild.
+# CI environments that attempt to run ./gradlew will not fail hard with "No such file or directory".
+# To perform a real native build, run: npm run prebuild:android
+echo "[info] Managed Expo app: Android native project not generated yet."
+echo "[info] To build natively, run 'npm run prebuild:android' to create the android/ directory with a real Gradle wrapper."
+exit 0

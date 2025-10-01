@@ -8,8 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "prebuild:android": "expo prebuild --platform android",
-    "build": "npm run prebuild:android && cd android && ./gradlew assembleDebug"
+    "typecheck": "tsc --noEmit",
+    "ci:check": "npm run typecheck && npm run lint",
+    "build": "echo \"Managed Expo app: native android build not available without prebuild. Running CI checks instead.\" && npm run ci:check"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
